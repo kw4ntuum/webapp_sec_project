@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StockIT - Ajouter un produit</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            background-image: linear-gradient(to bottom right, #001a33, #000000);
+			background-attachment: fixed;
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-top: 100px;
+            font-size: 48px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        form {
+            width: 400px;
+            margin: 0 auto;
+            margin-top: 50px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            position: relative;
+            z-index: 1;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #00cc00;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        a:hover {
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <h1>StockIT - Ajouter un produit</h1>
+    <form action="{{ url_for('ajouter_produit') }}" method="post">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom"><br>
+        <label for="quantite">Quantité :</label>
+        <input type="number" id="quantite" name="quantite"><br>
+        <label for="prix">Prix :</label>
+        <input type="number" id="prix" name="prix" step="0.01"><br>
+        <label for="description">Description :</label>
+        <textarea id="description" name="description"></textarea><br>
+        <button type="submit">Ajouter</button>
+    </form>
+    <a href="{{ url_for('stock') }}">Retour au stock</a>
+    <a href="{{ url_for('logout') }}">Déconnexion</a>
+</body>
+</html>

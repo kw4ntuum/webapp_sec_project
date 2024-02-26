@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StockIT - Connexion</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            background-image: linear-gradient(to bottom right, #001a33, #000000);
+            background-attachment: fixed;
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-top: 100px;
+            font-size: 48px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        p {
+            color: #aaa;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            position: relative;
+            z-index: 1;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #fff;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        input[type="text"], input[type="password"] {
+            display: block;
+            margin: 0 auto;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #00ff00;
+            color: #000;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #00cc00;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            color: #aaa;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>StockIT - Connexion</h1>
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+    <form action="{{ url_for('login') }}" method="post">
+        <label for="username">Nom d'utilisateur :</label>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password"><br>
+        <button type="submit">Se connecter</button>
+    </form>
+</body>
+</html>
